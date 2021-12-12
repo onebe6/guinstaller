@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo sed -i 's/%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL \n Defaults !tty_tickets/' /etc/sudoers
+#sudo sed -i 's/%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL \n Defaults !tty_tickets/' /etc/sudoers
 
 for PKG in $(cat PKGS_BASIC.txt); do
     echo "DOWNLOADING: $PKG"
@@ -9,4 +9,4 @@ done
 
 echo "exec i3" | cat > ~/.xinitrc
 
-sudo systemctl enable lightdm.sevice
+sudo systemctl enable lightdm
