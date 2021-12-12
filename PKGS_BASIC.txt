@@ -1,0 +1,10 @@
+xorg
+noto-fonts
+lightdm
+lightdm-gtk-greeter
+i3-gaps
+i3blocks
+i3clock
+i3status
+terminator
+firefox
