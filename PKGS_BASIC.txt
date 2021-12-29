@@ -1,4 +1,7 @@
-xorg
+xorg-xserver
+xorg-xrandr
+xorg-xinit
+xorg-xkill
 feh
 noto-fonts
 lightdm
