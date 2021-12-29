@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo pacman -Syyyu
+
 for PKG in $(cat PKGS_BASIC.txt); do
     echo "DOWNLOADING: $PKG"
     sudo pacman -S $PKG --noconfirm --needed
@@ -18,7 +20,7 @@ if lspci | grep -E "Radeon"; then
 #elif lspci | grep -E "Integrated Graphics Controller"; then
 fi
 
-echo "RADV_PERFTEST=aco" | cat > /etc/environment
+sudo echo "RADV_PERFTEST=aco" | cat > /etc/environment
 
 cd ~
 mkdir Github
@@ -28,11 +30,11 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 
 #yay -S corectrl
 
-#cat corectrl.rules > /etc/polkit-1/rules.d/90-corectrl.rules
+#sudo cat corectrl.rules > /etc/polkit-1/rules.d/90-corectrl.rules
 
-#sed -i 's/#GRUB_CMDLINE_LINUX_DEFAULT=\GRUB_CMDLINE_LINUX_DEFAULT=amdgpu.ppfeaturemask=0xffffffff/'
+#sudo sed -i 's/#GRUB_CMDLINE_LINUX_DEFAULT=\GRUB_CMDLINE_LINUX_DEFAULT=amdgpu.ppfeaturemask=0xffffffff/'
 
-#grub-mkconfig -o /boot/grub/grub.cfg
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 cat config > ~/.config/i3/config
 mv wallpaper.jpg ~/Pictures/wallpaper.jpg

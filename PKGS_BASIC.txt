@@ -11,6 +11,7 @@ kitty
 brave
 thunar
 kate
+dmenu
 simple-mptfs
 qt5
 qt5ct
