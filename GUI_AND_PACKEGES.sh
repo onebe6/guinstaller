@@ -11,6 +11,10 @@ echo "exec i3" | cat > ~/.xinitrc
 
 sudo systemctl enable lightdm
 
+#sudo cp /etc/xdg/picom.conf ~/.config/picom/picom.conf
+
+#picom --config ~/.config/picom/picom.conf
+
 # Graphics Drivers find and install
 #if lspci | grep -E "NVIDIA|GeForce"; then
 #    pacman -S nvidia --noconfirm --needed
@@ -36,6 +40,10 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 
+mkdir ~/.config/picom
+
 cat config > ~/.config/i3/config
 mv wallpaper.jpg ~/Pictures/wallpaper.jpg
-cat picom.conf ~/.config/picom/picom.conf
+cat picom.conf > ~/.config/picom/picom.conf
+
+picom --config ~/.config/picom/picom.conf
