@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -Syyyu
+sudo pacman -Syyy
 
 for PKG in $(cat PKGS_BASIC.txt); do
     echo "DOWNLOADING: $PKG"
