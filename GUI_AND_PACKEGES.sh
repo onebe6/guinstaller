@@ -26,11 +26,14 @@ fi
 
 sudo echo "RADV_PERFTEST=aco" | cat > /etc/environment
 
-cd ~
+pushd ~
 mkdir Github
-cd ~/Github
+pushd ~/Github
 
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+popd
+popd
 
 #yay -S corectrl
 
