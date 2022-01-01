@@ -59,7 +59,7 @@ sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit
 
 sudo sed -i's\#display-setup-script=\display-setup-script=/usr/local/bin/fixmonitor.sh\' /etc/lightdm/lightdm.conf
 
-cp fixmonitor.sh /usr/local/bin
+sudo cp fixmonitor.sh /usr/local/bin
 sudo chmod 775 /usr/local/bin/fixmonitor.sh
 
 mkdir $HOME/.config/compton
