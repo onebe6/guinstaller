@@ -38,11 +38,11 @@ yay -S brave-bin
 
 #sudo cat corectrl.rules > /etc/polkit-1/rules.d/90-corectrl.rules
 
-#sudo sed -i /etc/default/grub 's/GRUB_CMDLINE_LINUX_DEFAULT=\GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.ppfeaturemask=0xffffffff" #/'
+#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=/GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.ppfeaturemask=0xffffffff" #/' /etc/default/grub
 
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-sudo sed -i /etc/lightdm/lightdm.conf 's/#greeter-session=example-gtk-greeter\greeter-session=lightdm-webkit2-greeter/'
+sudo sed -i 's/#greeter-session=example-gtk-greeter/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
 
 mkdir $HOME/.config/compton
 touch $HOME/.config/compton/compton.conf
