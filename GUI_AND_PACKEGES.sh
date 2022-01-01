@@ -27,9 +27,22 @@ sudo echo "RADV_PERFTEST=aco" | cat > /etc/environment
 pushd $HOME
 mkdir Github
 pushd $HOME/Github
+mkdir yay
+pushd yay
 
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
+popd
+
+mkdir Nordic
+
+pushd Nordic
+
+git clone https://github.com/EliverLara/Nordic.git
+
+sudo mv Nordic/ /usr/share/themes/Nordic
+
+popd
 popd
 popd
 
