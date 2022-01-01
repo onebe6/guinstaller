@@ -43,8 +43,9 @@ yay brave-bin 1-3
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 mkdir $HOME/.config/compton
+touch $HOME/.config/compton/compton.conf
 mkdir $HOME/.config/i3
-mkdir $HOME/.config/i3/config
+touch $HOME/.config/i3/config
 
 cat config > $HOME/.config/i3/config
 cp wallpaper.jpg $HOME/Pictures/wallpaper.jpg
