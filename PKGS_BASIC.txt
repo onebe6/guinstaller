@@ -6,6 +6,7 @@ feh
 noto-fonts
 lightdm
 lightdm-gtk-greeter
+lightdm-webkit2_greeter
 i3-gaps
 i3blocks
 i3clock

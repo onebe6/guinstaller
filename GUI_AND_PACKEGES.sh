@@ -34,13 +34,15 @@ popd
 popd
 
 yay -S brave-bin
-yay -S corectrl
+#yay -S corectrl
 
-sudo cat corectrl.rules > /etc/polkit-1/rules.d/90-corectrl.rules
+#sudo cat corectrl.rules > /etc/polkit-1/rules.d/90-corectrl.rules
 
-sudo sed -i 's/#GRUB_CMDLINE_LINUX_DEFAULT=\GRUB_CMDLINE_LINUX_DEFAULT=amdgpu.ppfeaturemask=0xffffffff/'
+#sudo sed -i /etc/default/grub 's/GRUB_CMDLINE_LINUX_DEFAULT=\GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.ppfeaturemask=0xffffffff" #/'
 
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+sudo sed -i /etc/lightdm/lightdm.conf 's/#greeter-session=example-gtk-greeter\greeter-session=lightdm-webkit2-greeter/'
 
 mkdir $HOME/.config/compton
 touch $HOME/.config/compton/compton.conf
@@ -49,4 +51,5 @@ touch $HOME/.config/i3/config
 
 cat config > $HOME/.config/i3/config
 cp wallpaper.jpg $HOME/Pictures/wallpaper.jpg
+sudo cp wallpaper.jpg /usr/share/backgrounds
 cat compton.conf > $HOME/.config/compton/compton.conf
