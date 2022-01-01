@@ -191,4 +191,4 @@ exec_always xrandr -s 1920x1080
 
 exec_always feh --bg-scale /home/onebe6/Pictures/wallpaper.jpg
 
-exec_always compton -f
+exec_always compton --config $HOME/.config/compton/compton.conf

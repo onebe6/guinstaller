@@ -7,13 +7,11 @@ for PKG in $(cat PKGS_BASIC.txt); do
     sudo pacman -S $PKG --noconfirm --needed
 done
 
-echo "exec i3" | cat > ~/.xinitrc
+echo "exec i3" | cat > $HOME/.xinitrc
 
 sudo systemctl enable lightdm
 
-#sudo cp /etc/xdg/picom.conf ~/.config/picom/picom.conf
-
-#picom --config ~/.config/picom/picom.conf
+sudo localectl set-x11-keymap hu
 
 # Graphics Drivers find and install
 #if lspci | grep -E "NVIDIA|GeForce"; then
@@ -26,15 +24,16 @@ fi
 
 sudo echo "RADV_PERFTEST=aco" | cat > /etc/environment
 
-pushd ~
+pushd $HOME
 mkdir Github
-pushd ~/Github
+pushd $HOME/Github
 
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 popd
 popd
 
+yay brave-bin 1-3
 #yay -S corectrl
 
 #sudo cat corectrl.rules > /etc/polkit-1/rules.d/90-corectrl.rules
@@ -43,10 +42,12 @@ popd
 
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-mkdir ~/.config/picom
+mkdir $HOME/.config/compton
+mkdir $HOME/.config/i3
+mkdir $HOME/.config/i3/config
 
-cat config > ~/.config/i3/config
-mv wallpaper.jpg ~/Pictures/wallpaper.jpg
-cat picom.conf > ~/.config/picom/picom.conf
+cat config > $HOME/.config/i3/config
+cp wallpaper.jpg $HOME/Pictures/wallpaper.jpg
+cat compton.conf > $HOME/.config/compton/compton.conf
 
-picom --config ~/.config/picom/picom.conf
+picom --config $HOME/.config/picom/picom.conf
